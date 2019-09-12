@@ -10,14 +10,10 @@ public class CalculatorTest {
             System.out.print("enter the expression");
             String nOperationN = scan.nextLine();
             String[] arrOfNOperationN = nOperationN.split(" ");
-            for (String a:arrOfNOperationN)
-                System.out.println(a);
-            String part1 = arrOfNOperationN[0];
-            String part2 = arrOfNOperationN[1];
-            String part3 = arrOfNOperationN[2];
-            int number1 = Integer.parseInt(part1);
-            int number2 = Integer.parseInt(part3);
-            String operation = part2;
+
+            int number1 = Integer.parseInt(arrOfNOperationN[0]);
+            int number2 = Integer.parseInt(arrOfNOperationN[2]);
+            String operation = arrOfNOperationN[1];
 
             System.out.println("First number = " + number1);
             System.out.println("Operation = " + operation);

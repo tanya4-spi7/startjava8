@@ -47,20 +47,20 @@ public class Calculator {
                 System.out.println("sum result = " + (number1 + number2));
                 break;
             case "-":
-                System.out.println("difference result = " + (number1 - number2));
+                System.out.println("difference result = " + Math.subtractExact(int number1, int number2));
                 break;
             case "*":
-                System.out.println("increase result = " + (number1 * number2));
+                System.out.println("increase result = " + Math.multiplyExact(int number1, int number2));
                 break;
             case "/":
                 System.out.println("division result = " + (number1 / number2));
                 break;
             case "^": 
-                int result = 1;
-                for(int i = 1; i <= number2; i++) {
-                    result *= number1;
-                }
-                System.out.println("degree  result = " + result);
+              //  int result = 1;
+              //  for(int i = 1; i <= number2; i++) {
+              //      result *= number1;
+              //  }
+                System.out.println("degree  result = " + Math.pow(double number1, double number2));
                 break;
             case "%": 
                 System.out.println("%  result = " + (number1 % number2));
