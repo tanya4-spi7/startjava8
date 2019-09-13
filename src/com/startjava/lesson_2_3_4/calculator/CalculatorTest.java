@@ -20,10 +20,10 @@ public class CalculatorTest {
             System.out.println("Second number = " + number2);
             System.out.println("expression = " + nOperationN);
 
-            Calculator myCalc = new Calculator();
-            myCalc.setNumber1(number1);
-            myCalc.setNumber2(number2);
-            myCalc.setOperation(operation);
+            Calculator myCalc = new Calculator(number1, operation, number2);
+          //  myCalc.setNumber1(number1);
+          //  myCalc.setOperation(operation);
+          //  myCalc.setNumber2(number2);
 
             myCalc.calculate();
             do {

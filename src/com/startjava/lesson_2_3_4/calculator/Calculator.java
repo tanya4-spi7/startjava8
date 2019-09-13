@@ -4,6 +4,11 @@ public class Calculator {
     private int number1;
     private int number2;
     private String operation;
+    public Calculator(int number1, String operation, int number2) {
+        this.number1 = number1;
+        this.operation = operation;
+        this.number2 = number2;
+    }
 
     public int getNumber1() {
         return number1;
@@ -47,10 +52,10 @@ public class Calculator {
                 System.out.println("sum result = " + (number1 + number2));
                 break;
             case "-":
-                System.out.println("difference result = " + Math.subtractExact(int number1, int number2));
+                System.out.println("difference result = " + Math.subtractExact(number1, number2));
                 break;
             case "*":
-                System.out.println("increase result = " + Math.multiplyExact(int number1, int number2));
+                System.out.println("increase result = " + Math.multiplyExact(number1, number2));
                 break;
             case "/":
                 System.out.println("division result = " + (number1 / number2));
@@ -60,7 +65,7 @@ public class Calculator {
               //  for(int i = 1; i <= number2; i++) {
               //      result *= number1;
               //  }
-                System.out.println("degree  result = " + Math.pow(double number1, double number2));
+                System.out.println("degree  result = " + Math.pow(number1, number2));
                 break;
             case "%": 
                 System.out.println("%  result = " + (number1 % number2));
