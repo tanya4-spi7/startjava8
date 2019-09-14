@@ -8,17 +8,17 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         do {
             System.out.print("enter the expression");
-            String nOperationN = scan.nextLine();
-            String[] arrOfNOperationN = nOperationN.split(" ");
+            String numberOperationNumber = scan.nextLine();
+            String[] expression = numberOperationNumber.split(" ");
 
-            int number1 = Integer.parseInt(arrOfNOperationN[0]);
-            int number2 = Integer.parseInt(arrOfNOperationN[2]);
-            String operation = arrOfNOperationN[1];
+            int number1 = Integer.parseInt(expression[0]);
+            int number2 = Integer.parseInt(expression[2]);
+            String operation = expression[1];
 
             System.out.println("First number = " + number1);
             System.out.println("Operation = " + operation);
             System.out.println("Second number = " + number2);
-            System.out.println("expression = " + nOperationN);
+            System.out.println("expression = " + numberOperationNumber);
 
             Calculator myCalc = new Calculator(number1, operation, number2);
           //  myCalc.setNumber1(number1);

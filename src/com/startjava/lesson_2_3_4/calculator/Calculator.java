@@ -4,6 +4,7 @@ public class Calculator {
     private int number1;
     private int number2;
     private String operation;
+
     public Calculator(int number1, String operation, int number2) {
         this.number1 = number1;
         this.operation = operation;
@@ -60,11 +61,7 @@ public class Calculator {
             case "/":
                 System.out.println("division result = " + (number1 / number2));
                 break;
-            case "^": 
-              //  int result = 1;
-              //  for(int i = 1; i <= number2; i++) {
-              //      result *= number1;
-              //  }
+            case "^":
                 System.out.println("degree  result = " + Math.pow(number1, number2));
                 break;
             case "%": 
@@ -73,6 +70,6 @@ public class Calculator {
             default:
                 System.out.println("unknown operation = " + operation);
                 break;
-            }
-        } 
-} 
+        }
+    }
+}
