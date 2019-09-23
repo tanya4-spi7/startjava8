@@ -1,10 +1,16 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.util.Arrays;
+
 public class Player {
     private String name;
     private int number;
-    int[] guess1 = new int[10];
-    int[] guess2 = new int[10];
+    int[] guess = new int[10];
+    int k;
+
+    public Player(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
@@ -27,5 +33,24 @@ public class Player {
         } else {
             this.number = number;
         }
+    }
+    public void arrCopyOf() {
+        for (int i = 0; i < 10; i++) {
+            if (guess[i] != 0) {
+                int k = i + 1;
+                System.out.println(guess[i]);
+                System.out.println(k);
+            }
+        }
+        int[] guessCopy = Arrays.copyOf(guess,k);
+//        for (int i = 0; i < 10; i++) {
+//            if (guessCopy[i] != 0) {
+//                int j = i + 1;
+//                System.out.println(guessCopy[i]);
+//                System.out.println(j);
+//            }
+//        }
+        System.out.println("guessCopy: " + Arrays.toString(guessCopy));
+        //Arrays.fill(guess, 0);
     }
 }
