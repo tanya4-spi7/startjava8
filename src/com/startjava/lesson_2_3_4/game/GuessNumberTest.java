@@ -16,10 +16,6 @@ public class GuessNumberTest {
             GuessNumber myGame = new GuessNumber(player1, player2);
             System.out.println("You have 10 attempts");
             myGame.play();
-            System.out.println(name1);
-            player1.arrCopyOf();
-            System.out.println(name2);
-            player2.arrCopyOf();
             do {
                 System.out.println("I would like continue yes/no");
                 continuation = scan.nextLine();

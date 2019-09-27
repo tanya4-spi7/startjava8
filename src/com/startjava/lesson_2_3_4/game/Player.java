@@ -6,7 +6,11 @@ public class Player {
     private String name;
     private int number;
     int[] guess = new int[10];
-    int k;
+    int j;
+
+    public Player(int j) {
+        this.j = j;
+    }
 
     public Player(String name) {
         this.name = name;
@@ -15,6 +19,7 @@ public class Player {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         if (name.equals("")) {
             System.out.println("empty meaning");
@@ -34,22 +39,11 @@ public class Player {
             this.number = number;
         }
     }
-    public void arrCopyOf() {
-        for (int i = 0; i < 10; i++) {
-            if (guess[i] != 0) {
-                int k = i + 1;
-                System.out.println(guess[i]);
-                System.out.println(k);
-            }
-        }
-        int[] guessCopy = Arrays.copyOf(guess,k);
-//        for (int i = 0; i < 10; i++) {
-//            if (guessCopy[i] != 0) {
-//                int j = i + 1;
-//                System.out.println(guessCopy[i]);
-//                System.out.println(j);
-//            }
-//        }
+
+    public void getAttempts(j) {
+
+        int[] guessCopy = Arrays.copyOf(guess,j);
+
         System.out.println("guessCopy: " + Arrays.toString(guessCopy));
         //Arrays.fill(guess, 0);
     }

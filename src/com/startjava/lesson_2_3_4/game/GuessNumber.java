@@ -33,7 +33,8 @@ public class GuessNumber {
                     j = i+1;
                     flag = 2;
                     System.out.println("игрок " + player1.getName() + " угадал число " + puzzleNumber +" с " + j + " попытки");
-//                    int[] guessCopy = Arrays.copyOf(player1.guess,j);
+                    player1.getAttempts(j);
+                    //                    int[] guessCopy = Arrays.copyOf(player1.guess,j);
 //                    System.out.println("guessCopy: " + Arrays.toString(guessCopy));
 //                    int[] guess1Copy = Arrays.copyOf(player2.guess,i);
 //                    System.out.println("guess1Copy: " + Arrays.toString(guess1Copy));
@@ -57,6 +58,7 @@ public class GuessNumber {
                     j = i+1;
                     flag = 2;
                     System.out.println("игрок " + player2.getName() + " угадал число " + puzzleNumber +" с " + j + " попытки");
+                    player2.getAttempts(j);
 //                    int[] guessCopy = Arrays.copyOf(player1.guess,j);
 //                    System.out.println("guessCopy: " + Arrays.toString(guessCopy));
 //                    int[] guess1Copy = Arrays.copyOf(player2.guess,j);
@@ -74,9 +76,11 @@ public class GuessNumber {
                 if (i == 9) {
                     if (flag == 1) {
                         System.out.println("У " + player1.getName() + " закончились попытки");
+                        player1.getAttempts(10);
 //                        System.out.println(player1.guess[0] + " " + player1.guess[1] + " " + player1.guess[2] + " " + player1.guess[3] + " " + player1.guess[4]);
 //                        System.out.println(player1.guess[5] + " " + player1.guess[6] + " " + player1.guess[7] + " " + player1.guess[8] + " " + player1.guess[9]);
                         System.out.println("У " + player2.getName() + " закончились попытки");
+                        player2.getAttempts(10);
 //                        System.out.println(player2.guess[0] + " " + player2.guess[1] + " " + player2.guess[2] + " " + player2.guess[3] + " " + player2.guess[4]);
 //                        System.out.println(player2.guess[5] + " " + player2.guess[6] + " " + player2.guess[7] + " " + player2.guess[8] + " " + player2.guess[9]);
 //                        Arrays.fill(player1.guess, 0);
