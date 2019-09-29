@@ -40,11 +40,11 @@ public class Player {
         }
     }
 
-    public void getAttempts(j) {
+    public void getAttempts(int j) {
 
         int[] guessCopy = Arrays.copyOf(guess,j);
 
         System.out.println("guessCopy: " + Arrays.toString(guessCopy));
-        //Arrays.fill(guess, 0);
+        Arrays.fill(guess, 0);
     }
 }
