@@ -6,10 +6,10 @@ public class Player {
     private String name;
     private int number;
     int[] guess = new int[10];
-    int j;
+    int attempt;
 
-    public Player(int j) {
-        this.j = j;
+    public Player(int attempt) {
+        this.attempt = attempt;
     }
 
     public Player(String name) {
@@ -40,9 +40,9 @@ public class Player {
         }
     }
 
-    public void getAttempts(int j) {
+    public void getAttempts(int attempt) {
 
-        int[] guessCopy = Arrays.copyOf(guess,j);
+        int[] guessCopy = Arrays.copyOf(guess,attempt);
 
         System.out.println("guessCopy: " + Arrays.toString(guessCopy));
         Arrays.fill(guess, 0);
