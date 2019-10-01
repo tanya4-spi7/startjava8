@@ -51,6 +51,10 @@ public class GuessNumber {
         }
     }
 
+    public void arrayCleaning(Player player) {
+        Arrays.fill(player.guess, 0);
+    }
+
     public void play() {
         Random random = new Random();
         puzzleNumber = random.nextInt(101);
@@ -69,7 +73,9 @@ public class GuessNumber {
                     break;
                 }
                 guessEndGame(player1);
+                arrayCleaning(player1);
                 guessEndGame(player2);
+                arrayCleaning(player2);
                 if (i == 9) {
                     if (flag == 1) {
                         break;
