@@ -6,32 +6,75 @@ import java.util.Arrays;
 
 public class GuessNumber {
     private int puzzleNumber;
-    int  attempt;
+    int attempt;
     private Player player1;
     private Player player2;
-    int flag = 1;
+    public boolean isWin;
     int i;
 
     Scanner scan = new Scanner(System.in);
 
-    public GuessNumber(Player player1, Player player2 ) {
+    public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
 
-    public void guessGame(Player player) {
+    public void play() {
+        Random random = new Random();
+        puzzleNumber = random.nextInt(101);
+        System.out.println("puzzleNumber = " + puzzleNumber);
+        do {
+            for (i = 0; i < 10; i++) {
+                isWin = false;
+                inputNumber(player1);
+                compareNumbers(player1);
+                if (isWin == true) {
+                    arrayOutput(player1);
+                    arrayCleaning(player1);
+                    break;
+                }
+                inputNumber(player2);
+                compareNumbers(player2);
+                if (isWin == true) {
+                    arrayOutput(player2);
+                    arrayCleaning(player2);
+                    break;
+                }
+                guessEndGame(player1);
+                if (i == 9) {
+                    if (isWin == false) {
+                        arrayOutput(player1);
+                        arrayCleaning(player1);
+                    }
+                }
+                guessEndGame(player2);
+                if (i == 9) {
+                    if (isWin == false) {
+                        arrayOutput(player2);
+                        arrayCleaning(player2);
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+        //  while ((puzzleNumber != player1.getNumber()) && (puzzleNumber != player2.getNumber()));
+        while (true);
+    }
+
+    public void inputNumber(Player player) {
         System.out.println(player.getName());
         System.out.println("Enter the number");
         player.setNumber(scan.nextInt());
         System.out.println("number = " + player.getNumber());
-        player.guess[i] = player.getNumber();
+        player.guesses[i] = player.getNumber();
     }
 
-    public void guessCompare(Player player) {
+    public void compareNumbers(Player player) {
         if (puzzleNumber == player.getNumber()) {
             System.out.println("find number = " + player.getNumber());
             attempt = i + 1;
-            flag = 2;
+            isWin = true;
             System.out.println("игрок " + player.getName() + " угадал число " + puzzleNumber + " с " + attempt + " попытки");
             player.getAttempts(attempt);
         } else if (puzzleNumber > player.getNumber()) {
@@ -43,49 +86,20 @@ public class GuessNumber {
 
     public void guessEndGame(Player player) {
         if (i == 9) {
-            if (flag == 1) {
+            if (isWin == false) {
                 System.out.println("У " + player.getName() + " закончились попытки");
-                attempt=10;
+                attempt = 10;
                 player.getAttempts(attempt);
             }
         }
     }
 
-    public void arrayCleaning(Player player) {
-        Arrays.fill(player.guess, 0);
+    public void arrayOutput(Player player) {
+        System.out.println("guessesCopy: " + Arrays.toString(player.guessesCopy));
     }
 
-    public void play() {
-        Random random = new Random();
-        puzzleNumber = random.nextInt(101);
-        System.out.println("puzzleNumber = " + puzzleNumber);
-        do {
-            for( i=0; i < 10; i++) {
-                flag = 1;
-                guessGame(player1);
-                guessCompare(player1);
-                if  (flag == 2 ) {
-                    break;
-                }
-                guessGame(player2);
-                guessCompare(player2);
-                if  (flag == 2 ) {
-                    break;
-                }
-                guessEndGame(player1);
-                arrayCleaning(player1);
-                guessEndGame(player2);
-                arrayCleaning(player2);
-                if (i == 9) {
-                    if (flag == 1) {
-                        break;
-                    }
-                }
-            }
-            break;
-        }
-      //  while ((puzzleNumber != player1.getNumber()) && (puzzleNumber != player2.getNumber()));
-        while(true);
+    public void arrayCleaning(Player player) {
+        Arrays.fill(player.guesses, 0);
     }
 }
 

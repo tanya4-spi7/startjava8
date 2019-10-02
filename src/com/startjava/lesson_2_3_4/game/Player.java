@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int number;
-    int[] guess = new int[10];
+    public int[] guessesCopy;
+    int[] guesses = new int[10];
 
     public Player(String name) {
         this.name = name;
@@ -36,7 +37,7 @@ public class Player {
     }
 
     public void getAttempts(int attempt) {
-        int[] guessCopy = Arrays.copyOf(guess, attempt);
-        System.out.println("guessCopy: " + Arrays.toString(guessCopy));
+        int[] guessesCopy = Arrays.copyOf(guesses, attempt);
+     //   System.out.println("guessesCopy: " + Arrays.toString(guessesCopy));
     }
 }
