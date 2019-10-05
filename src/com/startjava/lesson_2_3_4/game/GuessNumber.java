@@ -6,11 +6,11 @@ import java.util.Arrays;
 
 public class GuessNumber {
     private int puzzleNumber;
-    int attempt;
+    private int attempt;
     private Player player1;
     private Player player2;
-    public boolean isWin;
-    int i;
+    private  boolean isWin;
+    private int i;
 
     Scanner scan = new Scanner(System.in);
 
@@ -23,43 +23,38 @@ public class GuessNumber {
         Random random = new Random();
         puzzleNumber = random.nextInt(101);
         System.out.println("puzzleNumber = " + puzzleNumber);
-        do {
             for (i = 0; i < 10; i++) {
                 isWin = false;
                 inputNumber(player1);
                 compareNumbers(player1);
                 if (isWin == true) {
-                    arrayOutput(player1);
-                    arrayCleaning(player1);
+                    Output(player1);
+                    Cleaning(player1);
                     break;
                 }
                 inputNumber(player2);
                 compareNumbers(player2);
                 if (isWin == true) {
-                    arrayOutput(player2);
-                    arrayCleaning(player2);
+                    Output(player2);
+                    Cleaning(player2);
                     break;
                 }
                 guessEndGame(player1);
                 if (i == 9) {
                     if (isWin == false) {
-                        arrayOutput(player1);
-                        arrayCleaning(player1);
+                        Output(player1);
+                        Cleaning(player1);
                     }
                 }
                 guessEndGame(player2);
                 if (i == 9) {
                     if (isWin == false) {
-                        arrayOutput(player2);
-                        arrayCleaning(player2);
+                        Output(player2);
+                        Cleaning(player2);
                         break;
                     }
                 }
             }
-            break;
-        }
-        //  while ((puzzleNumber != player1.getNumber()) && (puzzleNumber != player2.getNumber()));
-        while (true);
     }
 
     public void inputNumber(Player player) {
@@ -67,7 +62,7 @@ public class GuessNumber {
         System.out.println("Enter the number");
         player.setNumber(scan.nextInt());
         System.out.println("number = " + player.getNumber());
-        player.guesses[i] = player.getNumber();
+        player.setguesses[i] = player.getNumber();
     }
 
     public void compareNumbers(Player player) {
@@ -94,12 +89,12 @@ public class GuessNumber {
         }
     }
 
-    public void arrayOutput(Player player) {
-        System.out.println("guessesCopy: " + Arrays.toString(player.guessesCopy));
+    public void Output(Player player) {
+        System.out.println("guessesCopy: " + Arrays.toString(player.getGuessesCopy()));
     }
 
-    public void arrayCleaning(Player player) {
-        Arrays.fill(player.guesses, 0);
+    public void Cleaning(Player player) {
+        Arrays.fill(player.setguesses(), 0);
     }
 }
 
