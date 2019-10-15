@@ -62,6 +62,7 @@ public class GuessNumber {
         System.out.println("Enter the number");
         player.setNumber(scan.nextInt());
         System.out.println("number = " + player.getNumber());
+        player.setGuesses(int[] guesses);
         player.setGuesses()[i] = player.getNumber();
     }
 
@@ -95,6 +96,7 @@ public class GuessNumber {
 
     public void Cleaning(Player player) {
         Arrays.fill(player.setGuesses(), 0);
+        player.setGuesses(int[] guesses);
     }
 }
 
