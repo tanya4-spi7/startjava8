@@ -63,7 +63,7 @@ public class GuessNumber {
         player.setNumber(scan.nextInt());
         System.out.println("number = " + player.getNumber());
       //  player.setGuesses(guesses);
-        player.setGuesses()[i] = player.getNumber();
+        player.setGuesses(player.guesses)[i] = player.getNumber();
     }
 
     public void compareNumbers(Player player) {
@@ -94,8 +94,8 @@ public class GuessNumber {
         System.out.println("guessesCopy: " + Arrays.toString(player.getGuessesCopy()));
     }
 
-    public void Cleaning(Player player) {
-        Arrays.fill(player.setGuesses(), 0);
+    public  Cleaning(Player player) {
+        Arrays.fill(player.setGuesses(player.guesses), 0);
      //   player.setGuesses(guesses);
     }
 }
