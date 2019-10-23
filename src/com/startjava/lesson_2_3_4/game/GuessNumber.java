@@ -94,9 +94,9 @@ public class GuessNumber {
         System.out.println("guessesCopy: " + Arrays.toString(player.getGuessesCopy()));
     }
 
-    public void Cleaning(Player player) {
+    public static void Cleaning(Player player) {
         Arrays.fill(player.setGuesses(player.getGuesses()), 0);
-     //   player.setGuesses(guesses);
     }
+
 }
 
