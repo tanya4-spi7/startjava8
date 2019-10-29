@@ -49,7 +49,7 @@ public class Player {
         return guesses;
     }
 
-    public void setGuesses(int[] guesses) {
+    public void setGuesses() {
         if (guesses[0] == 0) {
             System.out.println("zero");
         } else {
