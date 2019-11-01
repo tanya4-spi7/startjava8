@@ -28,29 +28,29 @@ public class GuessNumber {
                 inputNumber(player1);
                 compareNumbers(player1);
                 if (isWin == true) {
-                    Output(player1);
-                    Cleaning(player1);
+                    outputGuess(player1);
+                    cleaningGuess(player1);
                     break;
                 }
                 inputNumber(player2);
                 compareNumbers(player2);
                 if (isWin == true) {
-                    Output(player2);
-                    Cleaning(player2);
+                    outputGuess(player2);
+                    cleaningGuess(player2);
                     break;
                 }
-                guessEndGame(player1);
+                guessFinishGame(player1);
                 if (i == 9) {
                     if (isWin == false) {
-                        Output(player1);
-                        Cleaning(player1);
+                        outputGuess(player1);
+                        cleaningGuess(player1);
                     }
                 }
-                guessEndGame(player2);
+                guessFinishGame(player2);
                 if (i == 9) {
                     if (isWin == false) {
-                        Output(player2);
-                        Cleaning(player2);
+                        outputGuess(player2);
+                        cleaningGuess(player2);
                         break;
                     }
                 }
@@ -80,7 +80,7 @@ public class GuessNumber {
         }
     }
 
-    public void guessEndGame(Player player) {
+    public void guessFinishGame(Player player) {
         if (i == 9) {
             if (isWin == false) {
                 System.out.println("У " + player.getName() + " закончились попытки");
@@ -90,11 +90,11 @@ public class GuessNumber {
         }
     }
 
-    public void Output(Player player) {
+    public void outputGuess(Player player) {
         System.out.println("guessesCopy: " + Arrays.toString(player.getGuessesCopy()));
     }
 
-    public static void Cleaning(Player player) {
+    public static void cleaningGuess(Player player) {
         Arrays.fill(player.setGuesses(player.getGuesses()), 0);
     }
 
